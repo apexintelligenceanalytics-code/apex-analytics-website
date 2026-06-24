@@ -1,0 +1,27 @@
+<svg width="300" height="240" viewBox="0 0 580 460" xmlns="http://www.w3.org/2000/svg">
+  <defs>
+    <linearGradient id="navyFade2" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#1A2C47"/>
+      <stop offset="100%" stop-color="#0F1B2D"/>
+    </linearGradient>
+    <linearGradient id="steelGradM" x1="0%" y1="0%" x2="0%" y2="100%">
+      <stop offset="0%" stop-color="#5E92B5"/>
+      <stop offset="100%" stop-color="#3B6E91"/>
+    </linearGradient>
+  </defs>
+  <g transform="translate(0, 20)">
+    <path d="M 290,0 L 580,420 L 415,420 L 290,210 L 165,420 L 0,420 Z" fill="url(#navyFade2)"/>
+    <rect x="6"  y="300" width="14" height="14" rx="2" fill="#3B6E91" opacity="0.9"/>
+    <rect x="26" y="278" width="14" height="14" rx="2" fill="#5E92B5" opacity="0.7"/>
+    <rect x="46" y="256" width="14" height="14" rx="2" fill="#3B6E91" opacity="0.85"/>
+    <rect x="64" y="232" width="14" height="14" rx="2" fill="#86B0CC" opacity="0.55"/>
+    <rect x="46" y="328" width="14" height="14" rx="2" fill="#3B6E91" opacity="0.6"/>
+    <rect x="84" y="210" width="14" height="14" rx="2" fill="#5E92B5" opacity="0.45"/>
+    <rect x="150" y="345" width="26" height="75"  rx="3" fill="url(#steelGradM)"/>
+    <rect x="188" y="310" width="26" height="110" rx="3" fill="url(#steelGradM)"/>
+    <rect x="226" y="270" width="26" height="150" rx="3" fill="url(#steelGradM)"/>
+    <rect x="264" y="225" width="26" height="195" rx="3" fill="url(#steelGradM)"/>
+    <polyline points="120,330 195,255 250,290 360,150" fill="none" stroke="#5E92B5" stroke-width="12" stroke-linecap="round" stroke-linejoin="round" opacity="0.9"/>
+    <polygon points="345,110 400,95 385,150 365,128" fill="#5E92B5"/>
+  </g>
+</svg>

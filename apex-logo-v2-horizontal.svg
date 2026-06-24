@@ -1,0 +1,42 @@
+<svg width="640" height="190" viewBox="0 0 640 190" xmlns="http://www.w3.org/2000/svg">
+  <defs>
+    <style>
+      .word-apex { font-family: 'Source Serif 4', 'Georgia', serif; font-weight: 700; }
+      .word-rest { font-family: 'Inter', 'Helvetica Neue', sans-serif; font-weight: 500; letter-spacing: 0.1em; }
+    </style>
+    <linearGradient id="navyFade3" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#1A2C47"/>
+      <stop offset="100%" stop-color="#0F1B2D"/>
+    </linearGradient>
+    <linearGradient id="steelGrad" x1="0%" y1="0%" x2="0%" y2="100%">
+      <stop offset="0%" stop-color="#5E92B5"/>
+      <stop offset="100%" stop-color="#3B6E91"/>
+    </linearGradient>
+  </defs>
+
+  <g transform="translate(10, 8) scale(0.33)">
+    <path d="M 290,0 L 580,420 L 415,420 L 290,210 L 165,420 L 0,420 Z" fill="url(#navyFade3)"/>
+    <!-- pixel dissolve left leg -->
+    <rect x="6"  y="300" width="14" height="14" rx="2" fill="#3B6E91" opacity="0.9"/>
+    <rect x="26" y="278" width="14" height="14" rx="2" fill="#5E92B5" opacity="0.7"/>
+    <rect x="46" y="256" width="14" height="14" rx="2" fill="#3B6E91" opacity="0.85"/>
+    <rect x="64" y="232" width="14" height="14" rx="2" fill="#86B0CC" opacity="0.55"/>
+    <rect x="46" y="328" width="14" height="14" rx="2" fill="#3B6E91" opacity="0.6"/>
+    <rect x="84" y="210" width="14" height="14" rx="2" fill="#5E92B5" opacity="0.45"/>
+    <!-- bar chart in crossbar -->
+    <rect x="150" y="345" width="26" height="75"  rx="3" fill="url(#steelGrad)"/>
+    <rect x="188" y="310" width="26" height="110" rx="3" fill="url(#steelGrad)"/>
+    <rect x="226" y="270" width="26" height="150" rx="3" fill="url(#steelGrad)"/>
+    <rect x="264" y="225" width="26" height="195" rx="3" fill="url(#steelGrad)"/>
+    <!-- rising trendline -->
+    <polyline points="120,330 195,255 250,290 360,150" fill="none" stroke="#5E92B5" stroke-width="12" stroke-linecap="round" stroke-linejoin="round" opacity="0.9"/>
+    <polygon points="345,110 400,95 385,150 365,128" fill="#5E92B5"/>
+  </g>
+
+  <g transform="translate(192, 6)">
+    <text x="0" y="76" class="word-apex" font-size="50" letter-spacing="2" fill="#0F1B2D">APEX</text>
+    <text x="0" y="108" class="word-rest" font-size="18" fill="#0F1B2D" opacity="0.85">INTELLIGENCE ANALYTICS</text>
+    <line x1="0" y1="124" x2="30" y2="124" stroke="#3B6E91" stroke-width="1.5" opacity="0.6"/>
+    <text x="34" y="128" class="word-rest" font-size="11" letter-spacing="0.22em" fill="#3B6E91" opacity="0.8">LLC · WYOMING</text>
+  </g>
+</svg>
