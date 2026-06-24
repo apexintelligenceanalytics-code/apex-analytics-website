@@ -1,0 +1,805 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Apex Intelligence Analytics — AI-Driven Software Innovation</title>
+<meta name="description" content="Apex Intelligence Analytics builds AI-driven software products that turn complex problems into elegant, scalable solutions across financial analytics, technical education, and business automation.">
+<meta property="og:title" content="Apex Intelligence Analytics">
+<meta property="og:description" content="We build AI-driven software products that turn ideas into market-ready reality.">
+<meta property="og:type" content="website">
+<link rel="icon" type="image/svg+xml" href="apex-logo-v2-mark.svg">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Source+Serif+4:ital,wght@0,300;0,400;0,600;0,700;1,300&family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+<style>
+*,*::before,*::after{box-sizing:border-box;margin:0;padding:0}
+:root{
+  --n0:#060D1A;--n1:#0A1628;--n2:#0F1F3D;--n3:#162747;--n4:#1E3358;
+  --s1:#2A5F82;--s2:#3B6E91;--s3:#5E92B5;--s4:#86B0CC;--s5:#B8D4E8;--s6:#DCECf5;
+  --w:#FFFFFF;--o1:#F5F7FA;--o2:#EDF0F5;--o3:#E2E7EF;
+  --t1:#0A1628;--t2:#3D4F63;--t3:#6B7A8D;--t4:#9AA5B1;
+  --bd:#DDE3EC;--bd2:#C8D2DC;
+  --accent:#3B6E91;--accent2:#5E92B5;
+}
+html{scroll-behavior:smooth;font-size:16px}
+body{font-family:'Inter',sans-serif;background:var(--w);color:var(--t1);line-height:1.6;-webkit-font-smoothing:antialiased;overflow-x:hidden}
+
+/* ─── NAV ─── */
+#nav{
+  position:fixed;inset:0 0 auto;z-index:200;
+  transition:background .3s,border-color .3s,backdrop-filter .3s;
+  background:transparent;border-bottom:1px solid transparent;
+}
+#nav.scrolled{
+  background:rgba(6,13,26,0.88);
+  backdrop-filter:blur(20px);-webkit-backdrop-filter:blur(20px);
+  border-color:rgba(59,110,145,0.18);
+}
+.nav-wrap{max-width:1200px;margin:0 auto;padding:0 48px;height:68px;display:flex;align-items:center;justify-content:space-between}
+.nav-logo-img{height:34px;width:auto;filter:brightness(0) invert(1);display:block}
+.nav-right{display:flex;align-items:center;gap:36px}
+.nav-right a{font-size:13px;font-weight:500;color:rgba(255,255,255,0.55);text-decoration:none;letter-spacing:.04em;transition:color .2s}
+.nav-right a:hover{color:#fff}
+.nav-btn{
+  font-size:12px!important;font-weight:600!important;letter-spacing:.08em!important;
+  color:#fff!important;background:var(--s2);
+  padding:9px 22px;border-radius:5px;transition:background .2s!important;
+}
+.nav-btn:hover{background:var(--s1)!important}
+
+/* ─── HERO ─── */
+.hero{
+  min-height:100vh;background:var(--n1);
+  display:flex;align-items:center;
+  position:relative;overflow:hidden;
+  padding:100px 0 80px;
+}
+/* Grid */
+.hero-grid{
+  position:absolute;inset:0;
+  background-image:linear-gradient(rgba(59,110,145,.1) 1px,transparent 1px),linear-gradient(90deg,rgba(59,110,145,.1) 1px,transparent 1px);
+  background-size:72px 72px;
+  mask-image:radial-gradient(ellipse 80% 70% at 50% 40%,black 40%,transparent 100%);
+}
+/* Orbs */
+.orb{position:absolute;border-radius:50%;pointer-events:none}
+.orb1{width:700px;height:700px;top:-15%;left:-10%;background:radial-gradient(circle,rgba(59,110,145,.15) 0%,transparent 65%)}
+.orb2{width:500px;height:500px;bottom:-10%;right:-5%;background:radial-gradient(circle,rgba(26,44,71,.4) 0%,transparent 70%)}
+.orb3{width:300px;height:300px;top:30%;right:15%;background:radial-gradient(circle,rgba(94,146,181,.08) 0%,transparent 60%)}
+
+.hero-inner{position:relative;z-index:2;max-width:1200px;margin:0 auto;padding:0 48px;display:grid;grid-template-columns:1fr 1fr;gap:80px;align-items:center}
+
+/* Left copy */
+.hero-eyebrow{display:inline-flex;align-items:center;gap:10px;margin-bottom:28px}
+.hero-eyebrow-dot{width:6px;height:6px;border-radius:50%;background:var(--s3);animation:pulse 2s ease-in-out infinite}
+@keyframes pulse{0%,100%{opacity:1;transform:scale(1)}50%{opacity:.5;transform:scale(.8)}}
+.hero-eyebrow span{font-size:11px;font-weight:600;letter-spacing:.18em;text-transform:uppercase;color:var(--s3)}
+
+.hero h1{
+  font-family:'Source Serif 4',serif;
+  font-size:clamp(40px,5.5vw,72px);
+  font-weight:700;line-height:1.06;
+  color:#fff;letter-spacing:-2px;
+  margin-bottom:24px;
+}
+.hero h1 .accent{
+  display:block;
+  background:linear-gradient(120deg,var(--s3) 0%,var(--s5) 100%);
+  -webkit-background-clip:text;-webkit-text-fill-color:transparent;background-clip:text;
+}
+
+.hero-sub{font-size:17px;line-height:1.8;color:rgba(255,255,255,.55);font-weight:300;margin-bottom:40px;max-width:480px}
+
+.hero-actions{display:flex;gap:14px;flex-wrap:wrap;margin-bottom:56px}
+.btn-primary{
+  display:inline-flex;align-items:center;gap:8px;
+  font-size:14px;font-weight:600;color:#fff;
+  background:var(--s2);padding:13px 28px;border-radius:6px;text-decoration:none;
+  transition:background .2s,transform .15s;letter-spacing:.02em;
+}
+.btn-primary:hover{background:var(--s1);transform:translateY(-1px)}
+.btn-secondary{
+  display:inline-flex;align-items:center;gap:8px;
+  font-size:14px;font-weight:500;color:rgba(255,255,255,.7);
+  border:1px solid rgba(255,255,255,.15);padding:13px 28px;border-radius:6px;text-decoration:none;
+  transition:all .2s;letter-spacing:.02em;
+}
+.btn-secondary:hover{border-color:rgba(255,255,255,.3);color:#fff}
+
+.hero-proof{display:flex;align-items:center;gap:20px}
+.proof-item{text-align:center}
+.proof-num{font-family:'Source Serif 4',serif;font-size:28px;font-weight:600;color:#fff;line-height:1}
+.proof-num span{color:var(--s3)}
+.proof-label{font-size:11px;font-weight:500;letter-spacing:.1em;text-transform:uppercase;color:rgba(255,255,255,.35);margin-top:4px}
+.proof-div{width:1px;height:36px;background:rgba(255,255,255,.1)}
+
+/* Right card cluster */
+.hero-right{position:relative}
+.hero-card-stack{position:relative;height:420px}
+.hcard{
+  position:absolute;background:rgba(255,255,255,.04);
+  border:1px solid rgba(59,110,145,.2);border-radius:12px;
+  backdrop-filter:blur(8px);padding:20px 22px;
+  transition:transform .3s;
+}
+.hcard-main{width:320px;top:20px;left:0;background:rgba(22,39,71,.7);border-color:rgba(59,110,145,.35)}
+.hcard-voice{width:260px;top:0;right:0;background:rgba(10,22,40,.8);animation:float1 4s ease-in-out infinite}
+.hcard-perp{width:220px;bottom:40px;right:20px;animation:float2 5s ease-in-out infinite 1s}
+.hcard-rh{width:200px;bottom:0;left:10px;animation:float3 4.5s ease-in-out infinite .5s}
+@keyframes float1{0%,100%{transform:translateY(0)}50%{transform:translateY(-8px)}}
+@keyframes float2{0%,100%{transform:translateY(0)}50%{transform:translateY(-6px)}}
+@keyframes float3{0%,100%{transform:translateY(0)}50%{transform:translateY(-10px)}}
+.hcard-label{font-size:10px;font-weight:700;letter-spacing:.14em;text-transform:uppercase;margin-bottom:8px}
+.hcard-name{font-size:14px;font-weight:600;color:#fff;margin-bottom:4px}
+.hcard-desc{font-size:12px;color:rgba(255,255,255,.45);line-height:1.5}
+.hcard-stat{font-family:'Source Serif 4',serif;font-size:22px;font-weight:600;color:#fff;margin-top:10px}
+.hcard-stat span{font-size:12px;color:var(--s3);font-family:'Inter',sans-serif;font-weight:500;margin-left:4px}
+.dot-live{display:inline-block;width:6px;height:6px;border-radius:50%;background:#22c55e;margin-right:6px;animation:pulse 2s ease-in-out infinite}
+.dot-new{display:inline-block;width:6px;height:6px;border-radius:50%;background:var(--s3);margin-right:6px;animation:pulse 2s ease-in-out infinite}
+.dot-dev{display:inline-block;width:6px;height:6px;border-radius:50%;background:rgba(255,255,255,.3);margin-right:6px}
+
+/* ─── SECTIONS ─── */
+.section{padding:100px 0;border-bottom:1px solid var(--bd)}
+.section:last-of-type{border:none}
+.wrap{max-width:1200px;margin:0 auto;padding:0 48px}
+
+.eyebrow{font-size:11px;font-weight:700;letter-spacing:.2em;text-transform:uppercase;color:var(--s2);margin-bottom:14px;display:flex;align-items:center;gap:10px}
+.eyebrow::before{content:'';display:block;width:20px;height:2px;background:var(--s2);border-radius:1px}
+
+h2{font-family:'Source Serif 4',serif;font-size:clamp(30px,4vw,46px);font-weight:600;color:var(--n1);line-height:1.15;letter-spacing:-.8px;margin-bottom:16px}
+.section-sub{font-size:17px;color:var(--t3);line-height:1.75;max-width:560px;margin-bottom:52px;font-weight:300}
+
+/* ─── MISSION ─── */
+.mission-section{background:var(--w)}
+.mission-grid{display:grid;grid-template-columns:1fr 1fr;gap:72px;align-items:start}
+.mission-left h2{margin-bottom:20px}
+.mission-body{font-size:16px;color:var(--t2);line-height:1.85;margin-bottom:32px}
+.mission-body strong{color:var(--n1);font-weight:600}
+
+.mission-pillars{display:flex;flex-direction:column;gap:0;border:1px solid var(--bd);border-radius:8px;overflow:hidden}
+.mpillar{
+  padding:22px 24px;border-bottom:1px solid var(--bd);
+  display:flex;align-items:flex-start;gap:16px;
+  transition:background .2s;
+}
+.mpillar:last-child{border:none}
+.mpillar:hover{background:var(--o1)}
+.mpillar-num{
+  width:28px;height:28px;border-radius:6px;flex-shrink:0;
+  background:rgba(59,110,145,.1);display:flex;align-items:center;justify-content:center;
+  font-size:11px;font-weight:700;color:var(--s2);margin-top:1px;
+}
+.mpillar-title{font-size:14px;font-weight:600;color:var(--n1);margin-bottom:3px}
+.mpillar-desc{font-size:13px;color:var(--t3);line-height:1.6}
+
+.mission-right{}
+.mission-manifesto{
+  background:var(--n1);border-radius:12px;padding:40px 36px;
+  border:1px solid rgba(59,110,145,.2);position:relative;overflow:hidden;
+}
+.mission-manifesto::before{
+  content:'';position:absolute;top:-40%;right:-20%;
+  width:300px;height:300px;
+  background:radial-gradient(circle,rgba(59,110,145,.15) 0%,transparent 60%);
+}
+.mission-manifesto blockquote{
+  font-family:'Source Serif 4',serif;
+  font-size:22px;font-weight:400;font-style:italic;
+  color:rgba(255,255,255,.85);line-height:1.65;
+  position:relative;z-index:1;margin-bottom:28px;
+}
+.manifesto-author{font-size:12px;font-weight:600;letter-spacing:.1em;text-transform:uppercase;color:var(--s3);position:relative;z-index:1}
+
+.mission-values{display:grid;grid-template-columns:1fr 1fr;gap:12px;margin-top:20px}
+.mval{
+  background:var(--o1);border:1px solid var(--bd);border-radius:8px;
+  padding:18px 16px;transition:border-color .2s,background .2s;
+}
+.mval:hover{border-color:var(--bd2);background:var(--w)}
+.mval-icon{font-size:18px;margin-bottom:8px}
+.mval-title{font-size:13px;font-weight:600;color:var(--n1);margin-bottom:3px}
+.mval-desc{font-size:12px;color:var(--t3);line-height:1.5}
+
+/* ─── PRODUCTS ─── */
+.products-section{background:var(--o1)}
+
+.products-header{display:flex;align-items:flex-end;justify-content:space-between;margin-bottom:48px;gap:24px}
+.products-header-left{}
+
+.product-grid{display:grid;grid-template-columns:repeat(2,1fr);gap:1px;background:var(--bd);border:1px solid var(--bd);border-radius:12px;overflow:hidden}
+
+.pcard{
+  background:var(--w);padding:36px 32px;
+  position:relative;overflow:hidden;
+  transition:background .2s;
+  text-decoration:none;display:block;
+  cursor:pointer;
+}
+.pcard::after{
+  content:'';position:absolute;bottom:0;left:0;right:0;height:3px;
+  background:linear-gradient(90deg,var(--s2),var(--s3));
+  transform:scaleX(0);transform-origin:left;transition:transform .3s;
+}
+.pcard:hover{background:var(--o1)}
+.pcard:hover::after{transform:scaleX(1)}
+
+.pcard-featured{
+  background:var(--n1);grid-column:span 2;
+  border-bottom:1px solid rgba(59,110,145,.2);
+}
+.pcard-featured:hover{background:var(--n2)}
+.pcard-featured::after{background:linear-gradient(90deg,var(--s3),var(--s5))}
+
+.pcard-dev{background:var(--o2);cursor:default}
+.pcard-dev:hover{background:var(--o2)}
+.pcard-dev::after{display:none}
+
+.pcard-top{display:flex;align-items:flex-start;justify-content:space-between;margin-bottom:16px;gap:12px}
+.pcard-name{font-family:'Source Serif 4',serif;font-size:20px;font-weight:600;color:var(--n1);letter-spacing:-.3px}
+.pcard-featured .pcard-name{color:#fff;font-size:22px}
+
+.pbadge{font-size:10px;font-weight:700;letter-spacing:.1em;text-transform:uppercase;padding:4px 10px;border-radius:3px;white-space:nowrap;flex-shrink:0;margin-top:3px}
+.pbadge-live{background:rgba(34,197,94,.1);color:#16a34a;border:1px solid rgba(34,197,94,.25)}
+.pbadge-new{background:rgba(59,110,145,.12);color:var(--s2);border:1px solid rgba(59,110,145,.3)}
+.pbadge-dev{background:rgba(107,122,141,.08);color:var(--t3);border:1px solid var(--bd)}
+.pcard-featured .pbadge-new{background:rgba(94,146,181,.18);color:var(--s4);border-color:rgba(94,146,181,.3)}
+
+.pcard-desc{font-size:14px;color:var(--t2);line-height:1.75;margin-bottom:24px}
+.pcard-featured .pcard-desc{color:rgba(255,255,255,.55)}
+
+.pcard-footer{display:flex;align-items:center;justify-content:space-between}
+.pcard-url{font-size:12px;font-weight:500;color:var(--s2);display:flex;align-items:center;gap:5px}
+.pcard-featured .pcard-url{color:var(--s3)}
+.pcard-url svg{width:11px;height:11px;stroke:currentColor;fill:none;stroke-width:2;stroke-linecap:round;stroke-linejoin:round}
+
+.pcard-arrow{
+  width:34px;height:34px;border-radius:50%;border:1px solid var(--bd2);
+  display:flex;align-items:center;justify-content:center;
+  transition:all .2s;flex-shrink:0;
+}
+.pcard:hover .pcard-arrow{background:var(--n1);border-color:var(--n1)}
+.pcard:hover .pcard-arrow svg{stroke:#fff}
+.pcard-arrow svg{width:13px;height:13px;stroke:var(--t3);fill:none;stroke-width:2;stroke-linecap:round;stroke-linejoin:round;transition:stroke .2s}
+.pcard-featured .pcard-arrow{border-color:rgba(59,110,145,.35)}
+.pcard-featured .pcard-arrow svg{stroke:rgba(255,255,255,.4)}
+.pcard-featured:hover .pcard-arrow{background:var(--s2);border-color:var(--s2)}
+.pcard-featured:hover .pcard-arrow svg{stroke:#fff}
+
+.pcard-coming{font-size:12px;font-weight:500;color:var(--t4);letter-spacing:.06em;text-transform:uppercase}
+
+/* ─── HOW WE WORK ─── */
+.process-section{background:var(--w)}
+.process-grid{display:grid;grid-template-columns:repeat(4,1fr);gap:0;border:1px solid var(--bd);border-radius:12px;overflow:hidden}
+.pstep{
+  padding:36px 28px;border-right:1px solid var(--bd);
+  position:relative;
+  transition:background .2s;
+}
+.pstep:last-child{border-right:none}
+.pstep:hover{background:var(--o1)}
+.pstep-num{
+  font-family:'Source Serif 4',serif;
+  font-size:48px;font-weight:700;color:var(--o3);
+  line-height:1;margin-bottom:20px;
+  user-select:none;
+}
+.pstep-title{font-size:15px;font-weight:600;color:var(--n1);margin-bottom:8px}
+.pstep-desc{font-size:13px;color:var(--t3);line-height:1.65}
+.pstep-accent{width:24px;height:2px;background:var(--s2);border-radius:1px;margin-bottom:14px}
+
+/* ─── TECHNOLOGY ─── */
+.tech-section{background:var(--n1);overflow:hidden;position:relative}
+.tech-section::before{
+  content:'';position:absolute;inset:0;
+  background-image:linear-gradient(rgba(59,110,145,.07) 1px,transparent 1px),linear-gradient(90deg,rgba(59,110,145,.07) 1px,transparent 1px);
+  background-size:60px 60px;
+}
+.tech-inner{position:relative;z-index:1}
+.tech-inner .eyebrow{color:var(--s3)}
+.tech-inner .eyebrow::before{background:var(--s3)}
+.tech-inner h2{color:#fff}
+.tech-inner .section-sub{color:rgba(255,255,255,.45)}
+
+.tech-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:1px;background:rgba(59,110,145,.15);border:1px solid rgba(59,110,145,.15);border-radius:12px;overflow:hidden}
+.tpillar{background:rgba(15,31,61,.8);padding:32px 28px;transition:background .2s}
+.tpillar:hover{background:rgba(22,39,71,.9)}
+.tpillar-icon{font-size:28px;margin-bottom:16px}
+.tpillar-title{font-size:15px;font-weight:600;color:#fff;margin-bottom:8px}
+.tpillar-desc{font-size:13px;color:rgba(255,255,255,.45);line-height:1.65}
+.tpillar-tags{display:flex;flex-wrap:wrap;gap:6px;margin-top:16px}
+.ttag{font-size:10px;font-weight:600;letter-spacing:.08em;color:var(--s4);background:rgba(59,110,145,.12);border:1px solid rgba(59,110,145,.2);padding:3px 9px;border-radius:3px}
+
+/* ─── INVESTORS / TRUST ─── */
+.trust-section{background:var(--o1)}
+.trust-grid{display:grid;grid-template-columns:1fr 1fr;gap:48px;align-items:start}
+.trust-left h2{margin-bottom:20px}
+.trust-body{font-size:16px;color:var(--t2);line-height:1.85;margin-bottom:36px}
+
+.trust-signals{display:flex;flex-direction:column;gap:12px}
+.tsig{
+  display:flex;align-items:flex-start;gap:14px;
+  background:var(--w);border:1px solid var(--bd);border-radius:8px;padding:18px 20px;
+  transition:border-color .2s;
+}
+.tsig:hover{border-color:var(--bd2)}
+.tsig-icon{
+  width:36px;height:36px;border-radius:8px;flex-shrink:0;
+  background:rgba(59,110,145,.1);display:flex;align-items:center;justify-content:center;
+  font-size:16px;
+}
+.tsig-title{font-size:14px;font-weight:600;color:var(--n1);margin-bottom:3px}
+.tsig-desc{font-size:13px;color:var(--t3);line-height:1.5}
+
+.trust-right{}
+.trust-cta-card{
+  background:var(--n1);border-radius:12px;padding:44px 40px;
+  border:1px solid rgba(59,110,145,.2);
+  position:relative;overflow:hidden;text-align:center;
+}
+.trust-cta-card::before{
+  content:'';position:absolute;top:-30%;left:50%;transform:translateX(-50%);
+  width:400px;height:300px;
+  background:radial-gradient(ellipse,rgba(59,110,145,.2) 0%,transparent 65%);
+}
+.trust-cta-eyebrow{font-size:11px;font-weight:700;letter-spacing:.18em;text-transform:uppercase;color:var(--s3);margin-bottom:16px;position:relative;z-index:1}
+.trust-cta-heading{font-family:'Source Serif 4',serif;font-size:28px;font-weight:600;color:#fff;line-height:1.25;margin-bottom:14px;letter-spacing:-.3px;position:relative;z-index:1}
+.trust-cta-body{font-size:14px;color:rgba(255,255,255,.45);line-height:1.7;margin-bottom:32px;position:relative;z-index:1}
+.trust-cta-email{
+  display:inline-flex;align-items:center;gap:8px;
+  font-size:14px;font-weight:600;color:#fff;
+  background:var(--s2);padding:14px 32px;border-radius:6px;text-decoration:none;
+  transition:background .2s;position:relative;z-index:1;
+}
+.trust-cta-email:hover{background:var(--s1)}
+
+/* ─── FOOTER ─── */
+footer{background:var(--n0);padding:60px 0 44px;border-top:1px solid rgba(59,110,145,.1)}
+.footer-wrap{max-width:1200px;margin:0 auto;padding:0 48px}
+.footer-top{display:flex;justify-content:space-between;align-items:flex-start;gap:48px;margin-bottom:48px;padding-bottom:40px;border-bottom:1px solid rgba(255,255,255,.06)}
+.footer-brand{}
+.footer-logo-img{height:40px;width:auto;filter:brightness(0) invert(1);opacity:.8;margin-bottom:14px}
+.footer-brand-desc{font-size:13px;color:rgba(255,255,255,.3);line-height:1.7;max-width:280px}
+.footer-links{display:flex;gap:56px}
+.flink-group{}
+.flink-title{font-size:11px;font-weight:700;letter-spacing:.14em;text-transform:uppercase;color:rgba(255,255,255,.25);margin-bottom:14px}
+.flink-group a{display:block;font-size:13px;font-weight:400;color:rgba(255,255,255,.45);text-decoration:none;margin-bottom:9px;transition:color .2s}
+.flink-group a:hover{color:#fff}
+.footer-bottom{display:flex;justify-content:space-between;align-items:center;gap:24px}
+.footer-copy{font-size:12px;color:rgba(255,255,255,.2);letter-spacing:.03em}
+.footer-sub{font-size:12px;color:rgba(255,255,255,.15)}
+
+/* ─── RESPONSIVE ─── */
+@media(max-width:900px){
+  .nav-wrap,.wrap{padding:0 24px}
+  .hero-inner{grid-template-columns:1fr;gap:48px}
+  .hero-right{display:none}
+  .mission-grid,.trust-grid{grid-template-columns:1fr}
+  .process-grid{grid-template-columns:1fr 1fr}
+  .pstep:nth-child(2){border-right:none}
+  .pstep:nth-child(3){border-right:1px solid var(--bd);border-top:1px solid var(--bd)}
+  .pstep:nth-child(4){border-right:none;border-top:1px solid var(--bd)}
+  .tech-grid{grid-template-columns:1fr}
+  .mission-values{grid-template-columns:1fr}
+  .footer-top{flex-direction:column;gap:32px}
+  .footer-links{gap:32px}
+  .footer-bottom{flex-direction:column;text-align:center;gap:8px}
+  .product-grid{grid-template-columns:1fr}
+  .pcard-featured{grid-column:span 1}
+}
+@media(max-width:600px){
+  .hero h1{font-size:36px;letter-spacing:-1px}
+  .hero-proof{flex-wrap:wrap;gap:14px}
+  .process-grid{grid-template-columns:1fr}
+  .pstep{border-right:none;border-bottom:1px solid var(--bd)}
+  .pstep:last-child{border-bottom:none}
+  .footer-links{flex-direction:column;gap:24px}
+  .nav-right .nav-right-links{display:none}
+}
+</style>
+</head>
+<body>
+
+<!-- NAV -->
+<nav id="nav">
+  <div class="nav-wrap">
+    <img src="apex-logo-v2-horizontal.svg" alt="Apex Intelligence Analytics" class="nav-logo-img">
+    <div class="nav-right">
+      <a href="#mission">About</a>
+      <a href="#products">Products</a>
+      <a href="#process">How we work</a>
+      <a href="#contact" class="nav-btn">Get in touch</a>
+    </div>
+  </div>
+</nav>
+<script>
+window.addEventListener('scroll',()=>{
+  document.getElementById('nav').classList.toggle('scrolled',window.scrollY>40)
+},{ passive:true })
+</script>
+
+<!-- HERO -->
+<section class="hero">
+  <div class="hero-grid"></div>
+  <div class="orb orb1"></div>
+  <div class="orb orb2"></div>
+  <div class="orb orb3"></div>
+  <div class="hero-inner">
+    <div class="hero-left">
+      <div class="hero-eyebrow">
+        <div class="hero-eyebrow-dot"></div>
+        <span>Apex Intelligence Analytics</span>
+      </div>
+      <h1>
+        From idea<br>to intelligent
+        <span class="accent">software reality</span>
+      </h1>
+      <p class="hero-sub">We build AI-driven software products that solve real problems at scale — turning ambitious ideas into market-ready platforms across financial analytics, education, and business automation.</p>
+      <div class="hero-actions">
+        <a href="#products" class="btn-primary">
+          Explore our products
+          <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><line x1="5" y1="12" x2="19" y2="12"/><polyline points="12 5 19 12 12 19"/></svg>
+        </a>
+        <a href="#contact" class="btn-secondary">Partner with us</a>
+      </div>
+      <div class="hero-proof">
+        <div class="proof-item">
+          <div class="proof-num">4<span>+</span></div>
+          <div class="proof-label">Products</div>
+        </div>
+        <div class="proof-div"></div>
+        <div class="proof-item">
+          <div class="proof-num">3<span>+</span></div>
+          <div class="proof-label">Markets</div>
+        </div>
+        <div class="proof-div"></div>
+        <div class="proof-item">
+          <div class="proof-num">AI<span>-first</span></div>
+          <div class="proof-label">Architecture</div>
+        </div>
+        <div class="proof-div"></div>
+        <div class="proof-item">
+          <div class="proof-num">US<span>+</span></div>
+          <div class="proof-label">Market</div>
+        </div>
+      </div>
+    </div>
+    <div class="hero-right">
+      <div class="hero-card-stack">
+        <div class="hcard hcard-main">
+          <div class="hcard-label" style="color:var(--s3)"><span class="dot-new"></span>Latest launch</div>
+          <div class="hcard-name">Apex VoiceOrder</div>
+          <div class="hcard-desc">AI phone ordering for restaurants — 24/7, multi-accent, payment on call</div>
+          <div class="hcard-stat">$300<span>/ month Growth plan</span></div>
+        </div>
+        <div class="hcard hcard-voice">
+          <div class="hcard-label" style="color:#22c55e;font-size:10px;font-weight:700;letter-spacing:.14em;text-transform:uppercase"><span class="dot-live"></span>Live</div>
+          <div class="hcard-name" style="font-size:13px">PerpSignal Desk</div>
+          <div class="hcard-desc">Crypto perp futures analytics</div>
+        </div>
+        <div class="hcard hcard-perp">
+          <div class="hcard-label" style="color:#22c55e;font-size:10px;font-weight:700;letter-spacing:.14em;text-transform:uppercase"><span class="dot-live"></span>Live</div>
+          <div class="hcard-name" style="font-size:13px">RHCertify</div>
+          <div class="hcard-desc">Linux & Red Hat cert prep</div>
+        </div>
+        <div class="hcard hcard-rh">
+          <div class="hcard-label" style="color:rgba(255,255,255,.35);font-size:10px;font-weight:700;letter-spacing:.14em;text-transform:uppercase"><span class="dot-dev"></span>In development</div>
+          <div class="hcard-name" style="font-size:12px;color:rgba(255,255,255,.6)">AI Automation Suite</div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- MISSION -->
+<section class="section mission-section" id="mission">
+  <div class="wrap">
+    <div class="mission-grid">
+      <div class="mission-left">
+        <div class="eyebrow">Our mission</div>
+        <h2>Innovation engineered for impact</h2>
+        <p class="mission-body"><strong>Apex Intelligence Analytics</strong> is a technology holding company that conceives, builds, and operates AI-driven software products. We identify high-value problems in underserved markets and engineer intelligent solutions that create measurable business outcomes.</p>
+        <p class="mission-body" style="margin-top:0">Headquartered in Texas, we operate across financial market analytics, technical education, and business process automation — with every product built on a foundation of AI-first architecture.</p>
+        <div class="mission-pillars" style="margin-top:32px">
+          <div class="mpillar">
+            <div class="mpillar-num">01</div>
+            <div>
+              <div class="mpillar-title">Financial Market Analytics</div>
+              <div class="mpillar-desc">Data-driven tools for crypto and financial market intelligence</div>
+            </div>
+          </div>
+          <div class="mpillar">
+            <div class="mpillar-num">02</div>
+            <div>
+              <div class="mpillar-title">Technical Education</div>
+              <div class="mpillar-desc">Certification and professional development platforms</div>
+            </div>
+          </div>
+          <div class="mpillar">
+            <div class="mpillar-num">03</div>
+            <div>
+              <div class="mpillar-title">Business Automation</div>
+              <div class="mpillar-desc">AI-powered operational tools for SMB workflow efficiency</div>
+            </div>
+          </div>
+        </div>
+      </div>
+      <div class="mission-right">
+        <div class="mission-manifesto">
+          <blockquote>"We don't build software features. We engineer competitive advantages — products that make our customers significantly better at what they do."</blockquote>
+          <div class="manifesto-author">Apex Intelligence Analytics — Company philosophy</div>
+        </div>
+        <div class="mission-values">
+          <div class="mval">
+            <div class="mval-icon">⚡</div>
+            <div class="mval-title">Speed to market</div>
+            <div class="mval-desc">Ideas to deployed products in weeks, not years</div>
+          </div>
+          <div class="mval">
+            <div class="mval-icon">🎯</div>
+            <div class="mval-title">Precision targeting</div>
+            <div class="mval-desc">We build for specific underserved segments, not everyone</div>
+          </div>
+          <div class="mval">
+            <div class="mval-icon">🔗</div>
+            <div class="mval-title">AI-native stack</div>
+            <div class="mval-desc">Every product is built AI-first from architecture up</div>
+          </div>
+          <div class="mval">
+            <div class="mval-icon">📈</div>
+            <div class="mval-title">Scalable margins</div>
+            <div class="mval-desc">SaaS economics with 70–85% gross margins across portfolio</div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- PRODUCTS -->
+<section class="section products-section" id="products">
+  <div class="wrap">
+    <div class="products-header">
+      <div class="products-header-left">
+        <div class="eyebrow">Portfolio</div>
+        <h2>Our products</h2>
+        <p class="section-sub" style="margin-bottom:0">Four products across three verticals — each addressing a specific, validated market gap with an AI-driven solution.</p>
+      </div>
+    </div>
+    <div class="product-grid">
+
+      <!-- Featured: Apex VoiceOrder -->
+      <a class="pcard pcard-featured" href="https://apexvoiceorder.com" target="_blank" rel="noopener">
+        <div class="pcard-top">
+          <div class="pcard-name">Apex VoiceOrder</div>
+          <span class="pbadge pbadge-new">New · Launching 2026</span>
+        </div>
+        <p class="pcard-desc" style="max-width:700px">AI-powered voice ordering platform for restaurants. Answers every inbound call 24/7, takes orders conversationally in American, Indian, and Pakistani English accents, processes card payment on the call via secure keypad entry, and routes confirmed orders directly to the restaurant's POS system. Built specifically for the underserved US South Asian restaurant segment — a $540M addressable market.</p>
+        <div class="pcard-footer">
+          <span class="pcard-url">
+            apexvoiceorder.com
+            <svg viewBox="0 0 24 24"><path d="M18 13v6a2 2 0 01-2 2H5a2 2 0 01-2-2V8a2 2 0 012-2h6"/><polyline points="15 3 21 3 21 9"/><line x1="10" y1="14" x2="21" y2="3"/></svg>
+          </span>
+          <div class="pcard-arrow">
+            <svg viewBox="0 0 24 24"><line x1="5" y1="12" x2="19" y2="12"/><polyline points="12 5 19 12 12 19"/></svg>
+          </div>
+        </div>
+      </a>
+
+      <!-- PerpSignal -->
+      <a class="pcard" href="https://perpsignalpro.com" target="_blank" rel="noopener">
+        <div class="pcard-top">
+          <div class="pcard-name">PerpSignal Desk</div>
+          <span class="pbadge pbadge-live">Live</span>
+        </div>
+        <p class="pcard-desc">Educational analytics and market data dashboards for cryptocurrency perpetual futures markets. Real-time signal intelligence for traders and market analysts.</p>
+        <div class="pcard-footer">
+          <span class="pcard-url">
+            perpsignalpro.com
+            <svg viewBox="0 0 24 24"><path d="M18 13v6a2 2 0 01-2 2H5a2 2 0 01-2-2V8a2 2 0 012-2h6"/><polyline points="15 3 21 3 21 9"/><line x1="10" y1="14" x2="21" y2="3"/></svg>
+          </span>
+          <div class="pcard-arrow">
+            <svg viewBox="0 0 24 24"><line x1="5" y1="12" x2="19" y2="12"/><polyline points="12 5 19 12 12 19"/></svg>
+          </div>
+        </div>
+      </a>
+
+      <!-- RHCertify -->
+      <a class="pcard" href="https://rhcertify.com" target="_blank" rel="noopener">
+        <div class="pcard-top">
+          <div class="pcard-name">RHCertify</div>
+          <span class="pbadge pbadge-live">Live</span>
+        </div>
+        <p class="pcard-desc">Technical training and certification preparation platform for Linux, Red Hat, and cloud infrastructure. Structured learning paths from beginner to enterprise-ready engineer.</p>
+        <div class="pcard-footer">
+          <span class="pcard-url">
+            rhcertify.com
+            <svg viewBox="0 0 24 24"><path d="M18 13v6a2 2 0 01-2 2H5a2 2 0 01-2-2V8a2 2 0 012-2h6"/><polyline points="15 3 21 3 21 9"/><line x1="10" y1="14" x2="21" y2="3"/></svg>
+          </span>
+          <div class="pcard-arrow">
+            <svg viewBox="0 0 24 24"><line x1="5" y1="12" x2="19" y2="12"/><polyline points="12 5 19 12 12 19"/></svg>
+          </div>
+        </div>
+      </a>
+
+      <!-- AI Automation -->
+      <div class="pcard pcard-dev">
+        <div class="pcard-top">
+          <div class="pcard-name" style="color:var(--t2)">AI Automation Suite</div>
+          <span class="pbadge pbadge-dev">In development</span>
+        </div>
+        <p class="pcard-desc">Workflow automation and AI-driven operational tools for small and mid-sized businesses. Connecting intelligent systems to existing business infrastructure for measurable efficiency gains.</p>
+        <div class="pcard-footer">
+          <span class="pcard-coming">Launching 2026</span>
+        </div>
+      </div>
+
+    </div>
+  </div>
+</section>
+
+<!-- HOW WE WORK -->
+<section class="section process-section" id="process">
+  <div class="wrap">
+    <div class="eyebrow">How we build</div>
+    <h2>From concept to market</h2>
+    <p class="section-sub">Every product in our portfolio follows the same disciplined build philosophy — fast, focused, and AI-native from day one.</p>
+    <div class="process-grid">
+      <div class="pstep">
+        <div class="pstep-num">01</div>
+        <div class="pstep-accent"></div>
+        <div class="pstep-title">Identify the gap</div>
+        <div class="pstep-desc">We research underserved markets with high pain and low-quality existing solutions. Real problems, real customers, validated before a single line of code.</div>
+      </div>
+      <div class="pstep">
+        <div class="pstep-num">02</div>
+        <div class="pstep-accent"></div>
+        <div class="pstep-title">Architect AI-first</div>
+        <div class="pstep-desc">Every product is designed around an AI core — not bolted on as an afterthought. This creates a structural moat that traditional software cannot replicate.</div>
+      </div>
+      <div class="pstep">
+        <div class="pstep-num">03</div>
+        <div class="pstep-accent"></div>
+        <div class="pstep-title">Build and launch fast</div>
+        <div class="pstep-desc">We go from architecture to first paying customer in weeks. Tight feedback loops, real usage data from day one, no years-long development cycles.</div>
+      </div>
+      <div class="pstep">
+        <div class="pstep-num">04</div>
+        <div class="pstep-accent"></div>
+        <div class="pstep-title">Scale with precision</div>
+        <div class="pstep-desc">Community distribution, referral mechanics, and targeted outreach compound into exponential growth without equivalent cost increases.</div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- TECHNOLOGY -->
+<section class="section tech-section">
+  <div class="wrap">
+    <div class="tech-inner">
+      <div class="eyebrow">Technology</div>
+      <h2>Built on best-in-class infrastructure</h2>
+      <p class="section-sub">Our products are built on a curated stack of enterprise-grade AI and cloud services — giving us the capabilities of a large engineering team at a fraction of the cost.</p>
+      <div class="tech-grid">
+        <div class="tpillar">
+          <div class="tpillar-icon">🧠</div>
+          <div class="tpillar-title">AI & Language Models</div>
+          <div class="tpillar-desc">Large language models power our conversation, classification, and analytics engines — enabling natural, intelligent product experiences at scale.</div>
+          <div class="tpillar-tags">
+            <span class="ttag">GPT-4o</span>
+            <span class="ttag">Claude</span>
+            <span class="ttag">Real-time inference</span>
+          </div>
+        </div>
+        <div class="tpillar">
+          <div class="tpillar-icon">🔊</div>
+          <div class="tpillar-title">Voice & Speech AI</div>
+          <div class="tpillar-desc">Industry-leading speech recognition and synthesis APIs deliver sub-second latency voice interactions with multi-accent capability.</div>
+          <div class="tpillar-tags">
+            <span class="ttag">Deepgram Nova-3</span>
+            <span class="ttag">ElevenLabs</span>
+            <span class="ttag">Twilio</span>
+          </div>
+        </div>
+        <div class="tpillar">
+          <div class="tpillar-icon">☁️</div>
+          <div class="tpillar-title">Cloud Infrastructure</div>
+          <div class="tpillar-desc">Lean, high-performance server infrastructure optimized for cost efficiency and global reach — built to scale from 10 to 10,000 customers without architectural rework.</div>
+          <div class="tpillar-tags">
+            <span class="ttag">Hetzner</span>
+            <span class="ttag">Cloudflare</span>
+            <span class="ttag">Stripe</span>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- TRUST / INVESTORS -->
+<section class="section trust-section" id="contact">
+  <div class="wrap">
+    <div class="trust-grid">
+      <div class="trust-left">
+        <div class="eyebrow">Why Apex</div>
+        <h2>Built for scale. Structured for partnership.</h2>
+        <p class="trust-body">We're a disciplined, capital-efficient software company building high-margin SaaS products in validated markets. Every product is designed for strong unit economics from day one.</p>
+        <div class="trust-signals">
+          <div class="tsig">
+            <div class="tsig-icon">💰</div>
+            <div>
+              <div class="tsig-title">High-margin SaaS economics</div>
+              <div class="tsig-desc">70–85% gross margins across portfolio. Subscription revenue with predictable, recurring cash flows.</div>
+            </div>
+          </div>
+          <div class="tsig">
+            <div class="tsig-icon">🎯</div>
+            <div>
+              <div class="tsig-title">Underserved markets, defensible positions</div>
+              <div class="tsig-desc">We target specific niches with high pain and poor existing alternatives — creating natural moats through specialization.</div>
+            </div>
+          </div>
+          <div class="tsig">
+            <div class="tsig-icon">⚡</div>
+            <div>
+              <div class="tsig-title">Capital-efficient by design</div>
+              <div class="tsig-desc">AI-assisted development eliminates traditional engineering overhead. We reach market in weeks with minimal burn.</div>
+            </div>
+          </div>
+          <div class="tsig">
+            <div class="tsig-icon">📊</div>
+            <div>
+              <div class="tsig-title">Multi-product, compounding portfolio</div>
+              <div class="tsig-desc">Each product strengthens the holding company's revenue base and brand — reducing concentration risk as we scale.</div>
+            </div>
+          </div>
+        </div>
+      </div>
+      <div class="trust-right">
+        <div class="trust-cta-card">
+          <div class="trust-cta-eyebrow">Get in touch</div>
+          <h3 class="trust-cta-heading" style="font-family:'Source Serif 4',serif">Partnerships, investment & business inquiries</h3>
+          <p class="trust-cta-body">Whether you're a potential partner, investor, or enterprise customer — we want to hear from you. We respond to all serious inquiries within two business days.</p>
+          <a href="mailto:contact@apexintelligenceanalytics.com" class="trust-cta-email">
+            contact@apexintelligenceanalytics.com
+          </a>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- FOOTER -->
+<footer>
+  <div class="footer-wrap">
+    <div class="footer-top">
+      <div class="footer-brand">
+        <img src="apex-logo-v2-primary.svg" alt="Apex Intelligence Analytics" class="footer-logo-img">
+        <p class="footer-brand-desc">Building AI-driven software products that turn ambitious ideas into market-ready realities. Texas, United States.</p>
+      </div>
+      <div class="footer-links">
+        <div class="flink-group">
+          <div class="flink-title">Products</div>
+          <a href="https://apexvoiceorder.com" target="_blank" rel="noopener">Apex VoiceOrder</a>
+          <a href="https://perpsignalpro.com" target="_blank" rel="noopener">PerpSignal Desk</a>
+          <a href="https://rhcertify.com" target="_blank" rel="noopener">RHCertify</a>
+          <a href="#products">AI Automation Suite</a>
+        </div>
+        <div class="flink-group">
+          <div class="flink-title">Company</div>
+          <a href="#mission">About</a>
+          <a href="#process">How we build</a>
+          <a href="#contact">Contact</a>
+          <a href="mailto:contact@apexintelligenceanalytics.com">Investors</a>
+        </div>
+      </div>
+    </div>
+    <div class="footer-bottom">
+      <div class="footer-copy">&copy; 2026 Apex Intelligence Analytics. All rights reserved.</div>
+      <div class="footer-sub">Texas, United States &nbsp;·&nbsp; contact@apexintelligenceanalytics.com</div>
+    </div>
+  </div>
+</footer>
+
+</body>
+</html>
